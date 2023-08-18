@@ -1,0 +1,8 @@
+function CalcularSubtração(){
+    var numeroA = parseInt(prompt("Insira o primeiro número: "))
+    var numeroB = parseInt(prompt("Insira o segundo número: "))
+    var soma = numeroA - numeroB
+    console.log(soma)
+
+}
+CalcularSubtração()
