@@ -1,0 +1,62 @@
+var numeroA = parseInt(prompt("Insira o primeiro número: "))
+var numeroB = parseInt(prompt("Insira o segundo número: "))
+var continuar = 's' 
+var operação = 0
+var historico = []
+var contador = 0
+var historicoS = 0
+function CalcularAdição() {
+    var adição = numeroA + numeroB
+    historico[contador] = adição
+    contador++
+    return adição
+
+}
+function CalcularSubtração() {
+    var subtração = numeroA - numeroB
+    historico[contador] = subtração
+    contador++
+    return subtração
+
+}
+function CalcularMultiplicação() {
+    var multiplicação = numeroA * numeroB
+    historico[contador] = multiplicação
+    contador++
+    return multiplicação
+
+}
+function CalcularDivisão() {
+    var divisão = numeroA / numeroB
+    historico[contador] = divisão
+    contador++
+    return divisão
+
+}
+function ExibirHistorico(){
+    console.log(historico)
+    return historico
+}
+while(continuar == 's'){
+    operação = prompt("Qual operação você deseja realizar?(1 para adição, 2 para subtração, 3 para multiplicação e 4 para divisão)")
+    if(operação == 1){
+        console.log(CalcularAdição())
+    }else if(operação == 2){
+        console.log(CalcularSubtração())
+    }else if(operação == 3){
+        console.log(CalcularMultiplicação())
+    }else if(operação == 4){
+        console.log(CalcularDivisão())
+    }else{
+        console.log("Operação inválida! Digite outro número")
+    }
+    continuar = prompt("Deseja fazer outra operação?(s ou n)")
+    historicoS = prompt("Deseja exibir o historico?(1 para sim 2 para não")
+    if(historicoS == 1){
+        ExibirHistorico()
+    }else{
+
+    }
+    
+}
+
