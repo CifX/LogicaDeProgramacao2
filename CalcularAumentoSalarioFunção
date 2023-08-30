@@ -1,0 +1,46 @@
+var nome = ''
+var salario = 0
+var salarioNovo = 0
+var porcentagem = ''
+var pergunta = ''
+var percent = 0
+var percentNovo = 0
+var salario2 = 0
+function PerguntarNeS(){
+    nome = prompt("Insira o nome do funcionário: ")
+    salario = parseInt(prompt("Insira o salário do funcionário "))
+}
+function CalcAumento(salario){
+    if(salario <= 1500){
+        salarioNovo = salario + (salario * 20) / 100
+        porcentagem = '20%'
+    }else if(salario > 1501 && salario <= 2000){
+        salarioNovo = salario + (salario * 15) / 100
+        porcentagem = '15%'
+    }else if(salario > 2000 && salario <= 3000){
+        salarioNovo = salario + (salario * 10) / 100
+        porcentagem == '10%'
+        
+    }else if(salario > 3000){
+        salarioNovo = salario + (salario * 5) / 100
+        porcentagem == '5%'
+        
+    }
+    return salarioNovo
+}
+function Perguntar(){
+    pergunta = prompt("Deseja calcular outro aumento?(s ou n) ")
+    if(pergunta = 's'){
+        salario2 = parseInt(prompt("Digite o salario: "))
+        percent = parseInt(prompt("Digite a porcentagem de aumento: "))
+        percentNovo = salario2 + (salario2 * (percent / 100))
+        return percentNovo
+    }else{
+        
+    }
+}
+console.log(PerguntarNeS())
+CalcAumento(salario)
+console.log("O nome do funcionário é", nome, "o salário é", salario, "a % de aumento é", porcentagem, "o salario reajustado é", salarioNovo)
+Perguntar(salario2)
+console.log("O outro salário e seu respectivo aumento é ", percentNovo)
