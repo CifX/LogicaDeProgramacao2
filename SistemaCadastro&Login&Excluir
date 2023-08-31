@@ -1,0 +1,71 @@
+    let nomes = []
+    let  senhas = []
+    let contador = 0
+    let contador2 = 0
+function SolicitarUsu(){
+    let nome = prompt("Insira seu nome: ")
+    nomes[contador] = nome
+    contador++
+    let senha = prompt("Insira sua senha: ")
+    senhas[contador2] = senha
+    contador2++    
+}
+function Escolher(){
+    let escolha = 'true'
+    let escolhaNum = 0
+    while(escolha == 'true'){
+        escolhaNum = parseInt(prompt("O que deseja fazer? Digite 1 para cadastrar, 2 para fazer login, 3 para excluir um cadastro e 4 para encerrar o programa "))
+        switch(escolhaNum){
+            case 1:
+                SolicitarUsu()
+                break;
+            case 2:
+                Login()
+                break;
+            case 3:
+                ExcluirCadastro()
+                break;
+            case 4:
+                console.log("Programa encerrado!")
+                escolha = 'false'
+                break;
+            default:
+                console.log("Opção Inválida.")
+                break;
+        }
+    }
+}
+function Login(){
+    let nome = prompt("Insira o nome: ")
+    let senha = prompt("Insira a senha: ")
+    for(let i = 0; i < nomes.length; i++){
+        if(nome == nomes[i] && senha == senhas[i]){
+            console.log("Login efetuado!")
+        }else{
+            console.log("Login ou senha incorretos!")
+        }
+    }
+    
+}
+function ExcluirCadastro(){
+    let nomesSup = []
+    let senhasSup = []
+    let contadorSup = 0
+    let nome = prompt("Digite o nome do usuário a ser escolhido: ")
+
+    for(let i = 0; i < nomes.length; i++){
+        if(nome == nomes[i]){
+            console.log("Cadastro excluído com sucesso!")
+        }else{
+            nomesSup[contadorSup] = nomes[i]
+            senhasSup[contadorSup] = senhas[i]
+            contadorSup++
+        }
+    }
+
+    nomes = nomesSup
+    senhas = senhasSup
+    
+}
+SolicitarUsu()
+Escolher()
