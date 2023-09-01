@@ -1,0 +1,28 @@
+let nomePj
+let orçamentoPj = 0
+function CriaProjeto(){
+    nomePj = prompt("Insira o nome do projeto: ")
+    orçamentoPj = parseInt(prompt("Insira o orçamento do projeto: "))
+
+}
+function TipoDespesa(){
+    let nomepjt = ''
+    nomepjt = prompt("Insira o nome do projeto: ")
+    let valorpjt = parseInt(prompt("Insira o valor do projeto: "))
+    let Desp = 0
+    let R = 0 
+    Desp = orçamentoPj - valorpjt
+    R += orçamentoPj
+    let valor = true
+    while(valor){
+        if(Desp < orçamentoPj){
+           console.log("O saldo restante é: ", Desp)
+           valor = false
+        }else{
+            valor = false
+        }
+    }
+   
+}
+CriaProjeto()
+TipoDespesa()
