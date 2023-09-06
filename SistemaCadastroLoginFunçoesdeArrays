@@ -1,0 +1,51 @@
+let continuar = true
+let nomes = []
+let senhas = []
+
+function Solicitar(){
+    let acao = 0
+    while(continuar){
+        acao = parseInt(prompt("O que deseja fazer? Digite 1 para cadastrar, 2 para fazer login, 3 para excluir um cadastro e 4 para encerrar o programa"))
+        switch(acao){
+            case 1:
+                Cadastrar()
+                break;
+            case 2: 
+                Login()
+                break;
+            case 3:
+                ExcluirCadastro()
+                break;
+            case 4:
+                continuar = false
+                break;
+        }
+    }
+}
+
+function Cadastrar(){
+    let nome = prompt("Insira o nome que você deseja cadastrar: ")
+    let senha = prompt("Insira a senha que você deseja cadastrar: ")
+    nomes.push(nome)
+    senhas.push(senha)
+    
+}
+
+function Login(nome, senha){
+    nome = prompt("Insira o nome para fazer login: ")
+    senha = prompt("Insira a senha para fazer login: ")
+    if(nomes.includes(nome) && senhas.includes(senha)){
+        console.log("Login efetuado com sucesso")
+
+    }else{
+        console.log("Login inválido")
+    }
+}
+function ExcluirCadastro(nome){
+    nome = prompt("Insira o nome que você deseja excluir: ")
+    let posicao = nomes.indexOf(nome)
+    nomes.splice(posicao,1)
+    senhas.splice(posicao,1)
+    console.log("Cadastro excluído com sucesso.")
+}
+Solicitar()
